@@ -12,7 +12,6 @@ export default function Home() {
 
   useEffect(() => {
     // if (Web3Modal.cachedProvider) connect();
-
     if (typeof window !== "undefined") {
       const web3modal = new Web3Modal({
         network: "rinkeby", // optional
@@ -38,7 +37,6 @@ export default function Home() {
       const provider = new ethers.providers.Web3Provider(instance);
       const signer = provider.getSigner();
       const accounts = await provider.listAccounts();
-      // console.log("accounts", accounts);
       account.current = accounts[0];
       setUserAccount(account.current);
     } catch (err) {

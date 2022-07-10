@@ -7,7 +7,9 @@ function Navbar({ connect, account, disconnect }) {
         <li className="m-3">My Page</li>
         <li className="m-3">Create NFT</li>
         <li className="m-3">
-          {!account || account === null || account === "" ? (
+          {account.current == undefined ||
+          account.current === null ||
+          account.current === "" ? (
             <button
               onClick={connect}
               className=" basis-2/5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-3"
@@ -17,9 +19,9 @@ function Navbar({ connect, account, disconnect }) {
           ) : (
             <button
               onClick={disconnect}
-              className=" basis-2/5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-3"
+              className="basis-2/5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-3"
             >
-              Disconnect Wallet
+              Disconnect{" "}
             </button>
           )}
         </li>

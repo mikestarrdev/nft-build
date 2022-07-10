@@ -7,7 +7,7 @@ import Uploader from "../components/Uploader";
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState({});
-  const account = useRef("");
+  const account = useRef();
   const [userAccount, setUserAccount] = useState();
 
   useEffect(() => {
@@ -47,9 +47,9 @@ export default function Home() {
   const disconnect = async () => {
     try {
       await web3Modal.clearCachedProvider();
-      account = null;
+      account.current = null;
       console.log(account);
-      setUserAccount(null);
+      setUserAccount(() => null);
     } catch (err) {
       console.log(err);
     }
@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar connect={connect} disconnect={disconnect} account={userAccount} />
+      <Navbar connect={connect} disconnect={disconnect} account={account} />
       <h1 className="font-bold text-3xl text-center mx-auto my-3">NFT Gram</h1>
       <h3 className="text-center text-xl">
         Mint your own NFT's with 1 click! Drag & Drop, create an NFT with 1

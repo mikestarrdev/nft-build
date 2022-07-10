@@ -59,7 +59,7 @@ function Uploader() {
             />
           </label>
           <div className="text-center">
-            <p className="flex flex-row align-center justify-center text-s text-gray-600 dark:text-gray-400 m-2">
+            <p className="flex flex-row align-center justify-center text-s text-gray-500 dark:text-gray-500 m-4">
               {uploadedFile ? uploadedFile.name : null}
 
               <span className="flex mx-3">
@@ -69,7 +69,6 @@ function Uploader() {
               </span>
             </p>
           </div>
-          <br />
           <label>
             <input
               type="submit"

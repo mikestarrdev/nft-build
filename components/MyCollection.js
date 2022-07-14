@@ -4,8 +4,8 @@ function MyCollection() {
   const [myNFTs, setMyNFTs] = useState({});
 
   useEffect(() => {
-    // const CID = "bafybeict7v5n3r3yuxnxmbn33am76m3dttm4qzjrzlbskafrldc4ts2lym";
-    const APIKEY = "hidden";
+    const APIKEY =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDU2RTkzRjQyQzRlOTIyY0U0OUUzZjFmNTFFMDJGMjYxRDI2YzlBOTciLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1NjE4MzQ3NTc2OCwibmFtZSI6Ik5GVCBHcmFtIn0.WB2gYhFuebg_G91dRvfrziXGXhFJEk5mWZhMPDZ49YE";
     let date = new Date();
 
     fetch(`https://api.nft.storage/?before=${date.toISOString()}&limit=1`, {

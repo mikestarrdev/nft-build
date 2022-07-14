@@ -1,5 +1,5 @@
 function Navbar({ connect, account, disconnect }) {
-  console.log("account:", account);
+  // console.log("account:", account);
   return (
     <nav className="flex justify-center bg-sky-300 text-lg">
       <ul className="flex flex-row items-center align-center">

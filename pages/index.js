@@ -4,6 +4,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import Navbar from "../components/Navbar";
 import Uploader from "../components/Uploader";
+import MyCollection from "../components/MyCollection";
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState({});
@@ -64,6 +65,7 @@ export default function Home() {
         click
       </h3>
       <Uploader />
+      <MyCollection />
     </>
   );
 }

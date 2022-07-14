@@ -4,6 +4,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import Navbar from "../components/Navbar";
 import Uploader from "../components/Uploader";
+import MyCollection from "../components/MyCollection";
 
 export default function Home() {
   const [web3Modal, setWeb3Modal] = useState({});
@@ -11,7 +12,7 @@ export default function Home() {
   const [userAccount, setUserAccount] = useState();
 
   useEffect(() => {
-    // if (Web3Modal.cachedProvider) connect();
+    if (Web3Modal.cachedProvider) connect();
     if (typeof window !== "undefined") {
       const web3modal = new Web3Modal({
         network: "rinkeby", // optional
@@ -58,12 +59,13 @@ export default function Home() {
   return (
     <>
       <Navbar connect={connect} disconnect={disconnect} account={account} />
-      <h1 className="font-bold text-3xl text-center mx-auto my-3">NFT Gram</h1>
+      <h1 className="font-bold text-3xl text-center mx-auto my-3">NFT Buidl</h1>
       <h3 className="text-center text-xl">
         Mint your own NFT's with 1 click! Drag & Drop, create an NFT with 1
         click
       </h3>
       <Uploader />
+      <MyCollection />
     </>
   );
 }
